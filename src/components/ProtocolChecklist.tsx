@@ -12,30 +12,32 @@ export default function ProtocolChecklist({
   reference,
 }: IDictionary): JSXElement {
   return (
-    <div class="w-fit mx-auto mt-10 p-6 rounded-md bg-gray-50 shadow-lg flex flex-col justify-center items-center gap-8 border-[1px] border-gray-300">
-      <h1 class="font-mono text-xl">{title}</h1>
+    <div class="w-full flex justify-center mt-20">
+      <div class="mx-8 p-6 rounded-md bg-gray-50 shadow-lg flex flex-col justify-center items-center gap-8 border-[1px] border-gray-300">
+        <h1 class="font-mono text-xl">{title}</h1>
 
-      <ul class="flex flex-col gap-1">
-        {steps.map(([call, response]) => {
-          return (
-            <li class="block font-mono text-sm lg:text-lg whitespace-nowrap">
-              {call && response ? padBetween(call, response, 70) : null}
-            </li>
+        <ul class="flex flex-col gap-1">
+          {steps.map(([call, response]) => {
+            return (
+              <li class="block font-mono text-sm lg:text-lg whitespace-nowrap">
+                {call && response ? padBetween(call, response, 70) : null}
+              </li>
+            )
+          })}
+        </ul>
+
+        <span class="">
+          (see{" "}
+          <a
+            class="text-violet-800"
+            href={reference.url}
+            target="_blank"
+            rel="noopener">
+            {reference.title}
+          </a>
           )
-        })}
-      </ul>
-
-      <span class="">
-        (see{" "}
-        <a
-          class="text-violet-800"
-          href={reference.url}
-          target="_blank"
-          rel="noopener">
-          {reference.title}
-        </a>
-        )
-      </span>
+        </span>
+      </div>
     </div>
   )
 }

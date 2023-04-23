@@ -9,10 +9,10 @@ export default function Sidebar(): JSXElement {
 
   return (
     <div class="w-full h-fit px-6 py-6 flex flex-col gap-2 justify-start items-start">
-      <div class="flex w-full items-center justify-between gap-6">
+      <div class="flex flex-col md:flex-row w-full items-center justify-between gap-6">
         <div class="flex gap-2 items-center">
           <img src="/logo.svg" alt="checklist" class="h-8" />
-          <span class="w-fit text-base lg:text-lg align-middle text-gray-800">
+          <span class="w-fit text-base lg:text-lg align-middle text-gray-800 whitespace-nowrap">
             The Dental Checklist
           </span>
         </div>
@@ -39,7 +39,7 @@ export default function Sidebar(): JSXElement {
             return (
               <a
                 href={`/${entry.collection}/${entry.slug}`}
-                class="flex justify-center items-center h-fit py-2 px-3 text-sm hover:bg-violet-300 hover:border-violet-400 bg-white border-gray-400 cursor-pointer transition ease-in-out duration-100 rounded-lg border-[1px]">
+                class="flex justify-center items-center h-fit py-2 px-3 text-xs lg:text-sm hover:bg-violet-300 hover:border-violet-400 bg-white border-gray-400 cursor-pointer transition ease-in-out duration-100 rounded-lg border-[1px]">
                 {entry.data.title}
               </a>
             )

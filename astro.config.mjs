@@ -6,6 +6,6 @@ import sitemap from "@astrojs/sitemap";
 
 // https://astro.build/config
 export default defineConfig({
-  // site: 'https://stargazers.club',
+  site: 'https://the-dental-checklist.vercel.app',
   integrations: [tailwind(), mdx(), solidJs(), sitemap()]
 });

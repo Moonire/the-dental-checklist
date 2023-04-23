@@ -15,14 +15,14 @@ const { frontmatter } = Astro.props
 		<meta name="description" content={frontmatter.data.description} />
 		<title>{frontmatter.data.title}</title>
 	</head>
-	<body>
-    <div class="flex flex-col">
-      <div class="flex h-[100vh] flex-col">
+	<body class="w-full">
+    <div class="w-full flex flex-col">
+      <div class="flex w-full h-[100vh] flex-col">
         <Sidebar client:load />
         <slot />
       </div>
-      <footer>
-        <span class="flex justify-center items-center h-20 w-full bg-slate-900 text-gray-200">
+      <footer class="w-full">
+        <span class="flex justify-center text-sm lg:text-base items-center h-20 w-full bg-slate-900 text-gray-200">
           Copyright © 2023 Mounir Mallek. All rights reserved.
         </span>
       </footer>
