@@ -5,7 +5,7 @@ const { frontmatter } = Astro.props
 ---
 
 <!DOCTYPE html>
-<html lang="en" class="w-full">
+<html lang="en" class="w-full relative">
 	<head>
 		<meta charset="UTF-8" />
 		<meta name="viewport" content="width=device-width" />
@@ -16,11 +16,11 @@ const { frontmatter } = Astro.props
 		<title>{frontmatter.data.title}</title>
 	</head>
 	<body class="w-full flex flex-col">
-    <div class="flex w-full min-h-[100vh] flex-col">
+    <div class="flex w-full h-fit min-h-[100vh] flex-col">
       <Sidebar client:load />
       <slot />
     </div>
-    <footer class="flex w-full h-20 bg-slate-900 justify-center items-center " >
+    <footer class="absolute bottom-0 flex w-full h-20 bg-slate-900 justify-center items-center " >
       <span class="text-sm text-gray-200 lg:text-base">
         Copyright © 2023 Mounir Mallek. All rights reserved.
       </span>
