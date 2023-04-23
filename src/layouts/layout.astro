@@ -1,0 +1,31 @@
+---
+import Sidebar from "../components/Sidebar"
+
+const { frontmatter } = Astro.props
+---
+
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<meta name="viewport" content="width=device-width" />
+		<link rel="icon" type="image/svg+xml" href="/logo.svg" />
+    <link rel="sitemap" href="/sitemap-index.xml">
+		<meta name="generator" content={Astro.generator} />
+		<meta name="description" content={frontmatter.data.description} />
+		<title>{frontmatter.data.title}</title>
+	</head>
+	<body>
+    <div class="flex flex-col">
+      <div class="flex h-[100vh] flex-col">
+        <Sidebar client:load />
+        <slot />
+      </div>
+      <footer>
+        <span class="flex justify-center items-center h-20 w-full bg-slate-900 text-gray-200">
+          Copyright © 2023 Mounir Mallek. All rights reserved.
+        </span>
+      </footer>
+    </div>
+	</body>
+</html>
