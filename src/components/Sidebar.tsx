@@ -20,7 +20,7 @@ export default function Sidebar(): JSXElement {
           type="search"
           name="query"
           placeholder="Search"
-          class="w-[30rem] h-8 rounded-full px-4 py-5 border-[1px] border-gray-300"
+          class="w-11/12 max-w-[26rem] h-8 rounded-full px-4 py-5 border-[1px] border-gray-300"
           onChange={(e) => {
             setQuery(e.currentTarget.value)
           }}
