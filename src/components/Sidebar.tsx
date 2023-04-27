@@ -33,8 +33,8 @@ export default function Sidebar(): JSXElement {
 
       <div class="flex gap-2 flex-wrap">
         {protocols
-          .slice(0, MAX_LENGTH)
           .filter((entry) => isMatching(entry.data.title, query()))
+          .slice(0, MAX_LENGTH)
           .map((entry) => {
             return (
               <a
