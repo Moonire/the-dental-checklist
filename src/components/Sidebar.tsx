@@ -21,7 +21,7 @@ export default function Sidebar(): JSXElement {
           name="query"
           placeholder="Search"
           class="w-11/12 max-w-[26rem] h-8 rounded-full px-4 py-5 border-[1px] border-gray-300"
-          onChange={(e) => {
+          onkeyup={(e) => {
             setQuery(e.currentTarget.value)
           }}
         />
