@@ -6,7 +6,8 @@ interface IDictionary {
   reference: { title: string; url: string }
 }
 
-const MIN_CONTENT_LENGTH = 45
+const MIN_CONTENT_LENGTH = 43
+const PADDING_SPACES = 2
 const MIN_DOTS = 5
 
 export default function ProtocolChecklist({
@@ -30,11 +31,18 @@ export default function ProtocolChecklist({
         <ul class="flex flex-col gap-1">
           {steps.map(([call, response]) => {
             return (
-              <li class="block font-mono text-xs md:text-sm lg:text-lg whitespace-nowrap">
-                {call && response
-                  ? padBetween(call, response, lineLength)
-                  : null}
-              </li>
+              <>
+                <li class="hidden md:block font-mono text-sm lg:text-lg">
+                  {call && response
+                    ? padBetween(call, response, lineLength)
+                    : null}
+                </li>
+
+                <li class="block md:hidden mb-2 font-mono text-sm">
+                  <p class="font-bold">{call}</p>
+                  <p class="pl-2">⮑ {response}</p>
+                </li>
+              </>
             )
           })}
         </ul>
@@ -55,6 +63,6 @@ export default function ProtocolChecklist({
 }
 
 function padBetween(start: string, end: string, targetLength: number): string {
-  const padLength = targetLength - start.length - end.length
-  return start.concat(".".repeat(padLength)).concat(end)
+  const padLength = targetLength - start.length - end.length - PADDING_SPACES
+  return start.concat(" ").concat(".".repeat(padLength)).concat(" ").concat(end)
 }
